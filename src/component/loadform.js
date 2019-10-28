@@ -67,7 +67,7 @@ class LoadContractForm extends Component {
                 const name = value["name"];
                 const abi = value["abi"];
                 this.db.insert(address, {"name": name, abi: abi});
-                window.location.replace("/#/op");
+                window.location.replace("#/op");
             }
         })
     }

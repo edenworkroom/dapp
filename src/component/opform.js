@@ -9,11 +9,11 @@ import {Abi} from "./abi";
 const operation = Modal.operation;
 let dapp = {
     name: "Smart Contract Tool",
-    contractAddress: "27DmnnouWrYvzoZDHsZQ6DdWDFmaeRVVCEenvku28iSExpgpvc8LcUfdVB5RWgdFKBkbRXLWYvz5NnMehdxHRujh",
-    github: "https://github.com",
-    author: "zhongbentao",
-    url: "https://sero.cash",
-    logo: "cat",
+    contractAddress: "none",
+    github: "https://github.com/edenworkroom/dapp",
+    author: "eden",
+    url: "https://edenworkroom.github.io/dapp/#/",
+    logo: "https://edenworkroom.github.io/dapp/dapp.png",
 }
 
 popup.init(dapp, function () {
