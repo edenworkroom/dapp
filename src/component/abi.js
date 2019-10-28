@@ -4,7 +4,6 @@ import {createForm} from 'rc-form';
 
 import serojs from 'serojs'
 import popup from "popup-js-sdk";
-import ListItem from "antd-mobile/es/list/ListItem";
 
 const BigNumber = require('bignumber.js');
 const one = new BigNumber("1000000000000000000")
@@ -51,7 +50,7 @@ class MethodForm extends Component {
         let self = this;
         let from = "";
         let amount = "0";
-        let gasLimit;
+        let gasLimit = "0";
         self.props.accountForm.validateFields((error, value) => {
             from = value["account"];
             if (value["value"]) {
@@ -79,11 +78,11 @@ class MethodForm extends Component {
             let executeData = {
                 from: from,
                 to: this.props.contract.address,
-                value: "0x" + new BigNumber(amount).multipliedBy(one).toFixed(0).toString(16),
+                value: "0x" + new BigNumber(amount).multipliedBy(one).toString(16),
                 data: packData,
             };
 
-            if (!gasLimit) {
+            if (gasLimit === "0" && !self.props.method.constant) {
                 popup.estimateGas(executeData, function (gasLimit) {
                     executeData["gas"] = "0x" + new BigNumber(gasLimit).toString(16);
                     self.execute(executeData, contract);

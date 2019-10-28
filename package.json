@@ -5,7 +5,7 @@
   "dependencies": {
     "antd-mobile": "^2.3.1",
     "bn.js": "^5.0.0",
-    "popup-js-sdk": "0.0.6",
+    "popup-js-sdk": "0.0.7",
     "rc-form": "^2.4.9",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",

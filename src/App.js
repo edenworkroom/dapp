@@ -28,15 +28,12 @@ export class App extends Component {
                     <Link onClick={this.handleLink.bind(this)} key="op" to={this.state.link}>
                         <Icon type="right"/>
                     </Link>
-
                 </div>
                 <Switch>
                     <Route exact path="/" component={LoadContract}/>
                     <Route exact path="/op" component={OpContract}/>
                     <Route exact path="/load" component={LoadContract}/>
                 </Switch>
-
-
             </Router>
         )
     }

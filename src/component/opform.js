@@ -54,7 +54,7 @@ class OpContractForm extends Component {
                 if (index == 0) {
                     defaultAccount = item.PK;
                 }
-                accounts.set(item.PK, item.balances)
+                accounts.set(item.PK, {name: item.Name, balances: item.Balance})
             });
             that.setState({accounts: accounts, account: defaultAccount})
         });
@@ -72,14 +72,14 @@ class OpContractForm extends Component {
     showAccountList = () => {
         let self = this;
         let options = [];
-        this.state.accounts.forEach(function (balances, pk) {
-            let balance = balances["SERO"];
+        this.state.accounts.forEach(function (item, pk) {
+            let balance = item.balances["SERO"];
             if (!balance) {
                 balance = 0;
             }
             let text = self.formatAccount(pk, balance);
             options.push({
-                text: text, onPress: () => {
+                text: item.name + ":" + text, onPress: () => {
                     self.props.form.setFieldsValue({"account": pk});
                     self.setState({account: pk});
                 }
@@ -149,7 +149,10 @@ class OpContractForm extends Component {
                     <WhiteSpace/>
                 </WingBlank>
 
+                {contract && contract.abi &&
                 <Abi contract={contract} abi={contract.abi} accountForm={this.props.form}/>
+                }
+
                 <WhiteSpace/>
             </div>
         )
