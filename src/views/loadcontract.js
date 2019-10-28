@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import LoadForm from "../component/loadform";
 import {Flex} from "antd-mobile";
-import address from './address.jpeg'
-import wc from './wc.jpeg'
 
 export class LoadContract extends Component {
     constructor(props) {
@@ -20,11 +18,11 @@ export class LoadContract extends Component {
                     </p>
                     <Flex>
                         <Flex.Item>
-                            <img src={wc} width="150" height="150"></img>
+                            <img src="wc.jpeg" width="150" height="150"></img>
                             <p style={{textAlign: "center"}}>微信号</p>
                         </Flex.Item>
                         <Flex.Item>
-                            <img src={address} width="150" height="150"></img>
+                            <img src="address.jpeg" width="150" height="150"></img>
                             <p style={{textAlign: "center"}}>收款码</p>
                         </Flex.Item>
                     </Flex>
